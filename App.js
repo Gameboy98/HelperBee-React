@@ -10,11 +10,20 @@ import { createAppContainer ,createSwitchNavigator } from 'react-navigation';
 import {createDrawerNavigator} from 'react-navigation-drawer'
 
 import Splash from './src/Splash';
+import LandingScreen from './src/Landing';
+
 
 const stackNavigator = createStackNavigator(
   {
-    SplashScreen: {
+    Splash: {
       screen: Splash,
+      navigationOptions: () => ({
+        title: null,
+        headerShown: false,
+      }),
+    },
+    Landing: {
+      screen: LandingScreen,
       navigationOptions: () => ({
         title: null,
         headerShown: false,
