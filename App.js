@@ -1,15 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View,TouchableOpacity, Image,Platform } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import {Dimensions} from 'react-native';
+const { width } = Dimensions.get('window');
+
+import { createStackNavigator } from 'react-navigation-stack';
+import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
+import { createAppContainer ,createSwitchNavigator } from 'react-navigation';
+import {createDrawerNavigator} from 'react-navigation-drawer'
+
+import Splash from './src/Splash';
+
+const stackNavigator = createStackNavigator(
+  {
+    SplashScreen: {
+      screen: Splash,
+      navigationOptions: () => ({
+        title: null,
+        headerShown: false,
+      }),
+    },
+  }
+);
+
+export default createAppContainer(stackNavigator);
 
 const styles = StyleSheet.create({
   container: {
@@ -18,4 +32,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  icon: {
+    color: "rgba(255,255,255,1)",
+    fontSize: 25,
+    width: 18,
+    height: 25,
+    marginBottom:10
+  },
+  iconRow: {
+    height: 44,
+    flexDirection: "row",
+    marginLeft: 10,
+    marginTop: 0,
+    marginBottom:5,
+  },
+  iconRowFiller: {
+    flex: 1,
+    flexDirection: "row"
+  },
+  button: {
+    width: 25,
+    height: 25,
+    marginRight: 10,
+    marginTop: 15
+  },
+  icon2: {
+    color: "rgba(250,250,250,1)",
+    fontSize: 25
+  }
 });
