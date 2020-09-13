@@ -7,7 +7,8 @@ import {
   Text,
   Image,
   AsyncStorage,Alert,
-  ImageBackground
+  ImageBackground,
+  ScrollView
 } from "react-native";
 
  
@@ -27,7 +28,11 @@ export default class LandingScreen extends Component {
     if (this.state.user == '' || this.state.pass == '') {
         alert('Please Enter Fields');
       } else {
-        alert('Success');
+        if (this.state.user == 'user123' && this.state.pass == 'password'){
+          this.props.navigation.navigate("Question");
+        } else {
+          alert("Wrong Credentials")
+        }
       }
   };
 
@@ -39,7 +44,7 @@ export default class LandingScreen extends Component {
         <Image
           style={styles.image}
           resizeMode="contain"
-          source={require('../assets/Logo.png')}/>    
+          source={require('../assets/Logo.jpg')}/>    
           <TextInput placeholder="Enter Username" style={styles.textInput} onChangeText={(text) => this.setState({user: text}) }/>
           <TextInput placeholder="Enter Password" secureTextEntry style={styles.textInput} onChangeText={(text) => this.setState({pass: text}) }/>
         <TouchableOpacity

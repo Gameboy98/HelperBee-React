@@ -11,6 +11,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 
 import Splash from './src/Splash';
 import LandingScreen from './src/Landing';
+import QuestionScreen from './src/Question';
 
 
 const stackNavigator = createStackNavigator(
@@ -24,6 +25,13 @@ const stackNavigator = createStackNavigator(
     },
     Landing: {
       screen: LandingScreen,
+      navigationOptions: () => ({
+        title: null,
+        headerShown: false,
+      }),
+    },
+    Question: {
+      screen: QuestionScreen,
       navigationOptions: () => ({
         title: null,
         headerShown: false,

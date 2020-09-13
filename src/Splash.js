@@ -17,7 +17,7 @@ export default class Splash extends React.Component {
     const data = await this.performTimeConsumingTask();
     let isLogin =  await AsyncStorage.getItem("isLogIn");
     if(isLogin =="1"){
-      this.props.navigation.navigate('Landing');
+      this.props.navigation.navigate('Question');
     }else{
       this.props.navigation.navigate('Landing');
     }
@@ -35,7 +35,8 @@ export default class Splash extends React.Component {
     return (
       <View style={styles.viewStyles}>
         <Image
-          source={require('../assets/Logo.png')}/>
+          source={require('../assets/Logo.png')}
+          resizeMode="contain"/>
       </View>
     );
   }
