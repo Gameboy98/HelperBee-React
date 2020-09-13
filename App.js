@@ -11,7 +11,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 
 import Splash from './src/Splash';
 import LandingScreen from './src/Landing';
-import QuestionScreen from './src/Question';
+import MainTabNavigator from './src/MainTabNavigator';
 
 
 const stackNavigator = createStackNavigator(
@@ -30,11 +30,10 @@ const stackNavigator = createStackNavigator(
         headerShown: false,
       }),
     },
-    Question: {
-      screen: QuestionScreen,
+    Main: {
+      screen: MainTabNavigator,
       navigationOptions: () => ({
-        title: null,
-        headerShown: false,
+        header: null,
       }),
     },
   }

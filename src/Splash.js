@@ -17,7 +17,7 @@ export default class Splash extends React.Component {
     const data = await this.performTimeConsumingTask();
     let isLogin =  await AsyncStorage.getItem("isLogIn");
     if(isLogin =="1"){
-      this.props.navigation.navigate('Question');
+      this.props.navigation.navigate('Main');
     }else{
       this.props.navigation.navigate('Landing');
     }

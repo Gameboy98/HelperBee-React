@@ -29,7 +29,7 @@ export default class LandingScreen extends Component {
         alert('Please Enter Fields');
       } else {
         if (this.state.user == 'user123' && this.state.pass == 'password'){
-          this.props.navigation.navigate("Question");
+          this.props.navigation.navigate("Main");
         } else {
           alert("Wrong Credentials")
         }
