@@ -19,7 +19,7 @@ export default class Splash extends React.Component {
     if(isLogin =="1"){
       this.props.navigation.navigate('Main');
     }else{
-      this.props.navigation.navigate('Landing');
+      this.props.navigation.navigate('Main');
     }
   }
 

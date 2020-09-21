@@ -33,8 +33,18 @@ const stackNavigator = createStackNavigator(
     Main: {
       screen: MainTabNavigator,
       navigationOptions: () => ({
-        header: null,
-      }),
+        title: "HelperBee",
+        headerShown: true,
+        headerStyle: {  
+          backgroundColor: "#ffc313",            
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            alignSelf: "center",
+            fontSize: 20,
+          },
+        headerLeft:null,  
+    }),
     },
   }
 );

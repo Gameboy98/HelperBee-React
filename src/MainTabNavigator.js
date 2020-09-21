@@ -6,12 +6,14 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import HomeScreen from './Home';
 import CalendarScreen from './Calendar';
 import CalorieScreen from './Calorie';
-import ToDoScreen from './ToDo';
+import WalletScreen from './Wallet';
+import ProfileScreen from './Profile';
 
 const iconHome = require('../assets/tabbar/home1.png');
 const iconCalendar = require('../assets/tabbar/calendar.png');
 const iconCalorie = require('../assets/tabbar/calorie.png');
-const iconToDo = require('../assets/tabbar/todo.png');
+const iconWallet = require('../assets/tabbar/wallet.png');
+const iconProfile = require('../assets/tabbar/profile.png');
 
 const styles = StyleSheet.create({
   tabBarItemContainer: {
@@ -23,14 +25,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   tabBarIcon: {
-    width: 23,
-    height: 20,
+    width: 21,
+    height: 21,
   },
   tabBarIconFocused: {
-    tintColor: "#ff8b1a"
+    tintColor: "#ffc313"
   },
   headerContainer: {
-    height: 70,
+    height: 80,
     alignItems: 'center',
     justifyContent: 'flex-end',
     paddingBottom: 10,
@@ -70,12 +72,19 @@ export default createBottomTabNavigator(
         header: null,
       },
     },
-    ToDo: {
-      screen: ToDoScreen,
+    Wallet: {
+      screen: WalletScreen,
       navigationOptions: {
         header: null,
       },
     },
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -93,8 +102,11 @@ export default createBottomTabNavigator(
           case 'Calorie':
             iconSource = iconCalorie;
             break;
-          case 'ToDo':
-            iconSource = iconToDo;
+          case 'Wallet':
+            iconSource = iconWallet;
+            break;
+          case 'Profile':
+            iconSource = iconProfile;
             break;
           default:
             iconSource = iconHome;
@@ -111,21 +123,21 @@ export default createBottomTabNavigator(
       },
     }),
     tabBarPosition: 'bottom',
-    animationEnabled: false,
-    swipeEnabled: false,
+    animationEnabled: true,
+    swipeEnabled: true,
     tabBarOptions: {
-      activeTintColor:'#ff8b1a',
+      activeTintColor:'#ffc313',
       inactiveTintColor:'#a9a9a9',
-      showLabel: true,
+      showLabel: false,
       style: {
-        backgroundColor: "#ffffff",
-        borderTopWidth: 2,
-        borderTopColor: '#ffffff',
+        backgroundColor: "#fff",
+        borderTopWidth: 1.5,
+        borderTopColor: '#ffc313',
       },
       labelStyle: {
-        color: "#a9a9a9",
-        
-        fontSize: 15,
+        color: "#d3d3d3",
+        fontWeight: "bold",        
+        fontSize: 12,
       },
     },
   },

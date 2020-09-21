@@ -12,7 +12,7 @@ import {
 } from "react-native";
  
 
-export default class ToDoScreen extends Component {
+export default class WalletScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {};
