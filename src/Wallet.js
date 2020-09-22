@@ -13,15 +13,39 @@ import {
   AppRegistry,
   AsyncStorage,Alert
 } from 'react-native';
-import {Header, Title, Body} from 'native-base';
 
-const iconWallet = require('../assets/walle.png');
+import AntDesignI from 'react-native-vector-icons/AntDesign';
+const iconAdd = require('../assets/plus.png');
+
+import Modal from 'react-native-modal';
 
 export default class WalletScreen extends Component {
+  state = {
+    visibleModal: null,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
     };
+  }
+
+  AddModal(){
+    return(
+      <Modal isVisible={this.state.visibleModal === 1}>
+          <View style={styles.modalContent}>
+          <View style={{width:"100%", marginTop:3, justifyContent:"center", height:70,}}><Text style={styles.text11}>Your product is within 1 year. It's advised to call Brand Call center</Text></View>
+            <View style={styles.mod}>
+              <View style={styles.mod12}><View><Text style={styles.text4}>Your Brand :-</Text><Text style={styles.text4}>Call Center No :-</Text></View></View>
+              <View style={styles.mod12}><Text style={styles.text4}>{this.state.product.age}</Text></View>
+            </View>
+            <View style={styles.mod}>
+              <TouchableOpacity onPress={() => this.setState({ visibleModal: null })} style={styles.button1}><Text style={styles.text512}>Confirm</Text></TouchableOpacity>
+              <TouchableOpacity onPress={() => {this.props.navigation.navigate("Complaint", {item:this.state.product}); this.setState({ visibleModal: null });}} style={styles.button1}><Text style={styles.text512}>Call</Text><Image resizeMode="contain" source={icon} style={[styles.Image1]} /></TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+      );
   }
 
   render() {
@@ -59,6 +83,12 @@ export default class WalletScreen extends Component {
             }
             keyExtractor={(item, index) => index.toString()}/>
         </ScrollView>
+        <TouchableOpacity
+            style={styles.add}
+            onPress={() => this.setState({ visibleModal: 1 })}
+            underlayColor='#fff'>
+            <AntDesignI style={{alignSelf:"center"}} name="plus" size={22} color="#fff"/>
+          </TouchableOpacity>
       </View>
     );
   }
@@ -69,12 +99,6 @@ const styles = StyleSheet.create({
   main:{
     backgroundColor:"#ffffff",
     height:"100%",
-  },
-  header:{
-    width: "100%",
-    backgroundColor:"#ff8b1a",
-    alignSelf:"center",
-    flexDirection:"column",
   },
   text1:{
     marginTop:5,
@@ -95,5 +119,39 @@ const styles = StyleSheet.create({
     margin:10,
     width:"75%",
     marginLeft:0,
+  },
+  add:{
+    alignSelf:"flex-end",
+    justifyContent:"center",
+    height:50,
+    width:50,
+    margin:15,
+    backgroundColor:'#ffc313',
+    borderRadius:25,
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf:"center",
+    width:"95%"
+  },
+  mod:{
+    flexDirection:"row",
+  },
+  mod1:{
+    borderWidth:0.5,
+    borderColor:"#d3d3d3",
+    marginTop:3,
+    justifyContent:"center",
+    width:150,
+    height:35,
+  },
+  mod12:{
+    marginTop:3,
+    justifyContent:"center",
+    width:150,
+    height:35,
+    borderRadius:2,
   },
 });
