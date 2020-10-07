@@ -5,7 +5,8 @@ import {
   View,
   Image,
   TouchableOpacity,
-  AsyncStorage,Alert
+  AsyncStorage,Alert,
+  ScrollView
 } from 'react-native';
 
 export default class ProfileScreen extends Component {
@@ -28,19 +29,11 @@ export default class ProfileScreen extends Component {
           <Image style={styles.avatar} source={require('../assets/tabbar/profilemain.png')}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Logout</Text> 
-              </TouchableOpacity> 
-              <Text style={styles.name}>John Doe</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
               
+              <Text style={styles.name}>John Doe</Text>
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 1</Text>  
-              </TouchableOpacity>              
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 2</Text> 
-              </TouchableOpacity>
+                <Text style={{color:"white"}}>Logout</Text> 
+              </TouchableOpacity> 
             </View>
         </View>
       </View>
@@ -102,6 +95,6 @@ const styles = StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
-    backgroundColor: "#00BFFF",
+    backgroundColor: "#ffc313",
   },
 });
