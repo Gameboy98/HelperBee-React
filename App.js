@@ -7,12 +7,11 @@ const { width } = Dimensions.get('window');
 import { createStackNavigator } from 'react-navigation-stack';
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import { createAppContainer ,createSwitchNavigator } from 'react-navigation';
-import {createDrawerNavigator} from 'react-navigation-drawer'
+
 
 import Splash from './src/Splash';
 import LandingScreen from './src/Landing';
 import MainTabNavigator from './src/MainTabNavigator';
-
 
 const stackNavigator = createStackNavigator(
   {
@@ -33,10 +32,10 @@ const stackNavigator = createStackNavigator(
     Main: {
       screen: MainTabNavigator,
       navigationOptions: () => ({
-        title: "HelperBee",
+        title: "ShopIndx",
         headerShown: true,
         headerStyle: {  
-          backgroundColor: "#ffc313",            
+          backgroundColor: "#ae7bb6",            
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
