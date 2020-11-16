@@ -32,10 +32,10 @@ const stackNavigator = createStackNavigator(
     Main: {
       screen: MainTabNavigator,
       navigationOptions: () => ({
-        title: "ShopIndx",
+        title: "HelperBee",
         headerShown: true,
         headerStyle: {  
-          backgroundColor: "#ae7bb6",            
+          backgroundColor: "#ffc313",            
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
